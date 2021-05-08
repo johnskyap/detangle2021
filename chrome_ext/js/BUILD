@@ -6,7 +6,7 @@ closure_js_library(
     name = "acl_js",
     srcs = ["acl.js"],
     convention = "GOOGLE",
-    suppress = ["reportUnknownTypes"],
+    suppress = ["reportUnknownTypes", "JSC_STRICT_INEXISTENT_PROPERTY",],
     deps = [
         ":aclentries_js",
         ":common_js",
@@ -82,6 +82,13 @@ closure_js_library(
     name = "oauth_js",
     srcs = ["oauth.js"],
     convention = "GOOGLE",
+    suppress = [
+        "JSC_UNKNOWN_EXPR_TYPE", 
+        "JSC_HIDDEN_SUPERCLASS_PROPERTY",
+        "JSC_STRICT_INEXISTENT_PROPERTY",
+        "JSC_IMPLICITLY_NULLABLE_JSDOC",
+        "JSC_INEXISTENT_PROPERTY",
+    ],
     deps = [
         ":common_js",
         ":eventlog_js",
@@ -120,6 +127,7 @@ closure_js_library(
     name = "loadsettings_js",
     srcs = ["loadsettings.js"],
     convention = "GOOGLE",
+    suppress = ["reportUnknownTypes", "JSC_STRICT_INEXISTENT_PROPERTY",],
     deps = [
         ":acl_js",
         ":common_js",
@@ -160,6 +168,12 @@ closure_js_library(
     name = "background_js",
     srcs = ["background.js"],
     convention = "GOOGLE",
+    suppress = [
+        "reportUnknownTypes", 
+        "JSC_STRICT_INEXISTENT_PROPERTY", 
+        "JSC_NULLABLE_RETURN_WITH_NAME" , 
+        "JSC_UNKNOWN_EXPR_TYPE",
+    ],
     deps = [
         ":common_js",
         ":eventlog_js",
@@ -190,7 +204,10 @@ closure_js_library(
     name = "sync_options_js",
     srcs = ["sync_options.js"],
     convention = "GOOGLE",
-    suppress = ["reportUnknownTypes"],
+    suppress = [
+        "reportUnknownTypes",
+        "JSC_STRICT_INEXISTENT_PROPERTY",
+    ],
     deps = [
         ":common_js",
         ":firstrun_js",
@@ -204,7 +221,10 @@ closure_js_library(
     name = "webservice_js",
     srcs = ["webservice.js"],
     convention = "GOOGLE",
-    suppress = ["reportUnknownTypes"],
+    suppress = [
+        "reportUnknownTypes",
+        "JSC_STRICT_INEXISTENT_PROPERTY",
+    ],
     deps = [
         ":common_js",
         ":settings_js",

@@ -117,7 +117,9 @@ class Acl {
     const /** !Array<string> */ allRegExps =
         allEntries.filter(x => x instanceof RegExpEntry).map(x => x.value);
 
-    /** @private {!RegExp} */
+    /** @private {!RegExp} 
+     * @const
+    */
     this.compiledEntries_ =
         matchpatterns.matchPatternsToRegExp(allMatchPatterns, allRegExps);
   }

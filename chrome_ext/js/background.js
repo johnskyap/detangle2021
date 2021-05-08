@@ -168,7 +168,7 @@ class Background {
    * Event handler for chrome.storage.onChanged.
    *
    * @this {!Background}
-   * @param {!Object<string,StorageChange>} changes Changes that were made
+   * @param {!Object<string,!StorageChange>} changes Changes that were made
    * @param {string} areaName Name of the area that was change
    */
   storageChangedHandler(changes, areaName) {
